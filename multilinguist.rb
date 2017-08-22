@@ -52,3 +52,46 @@ class Multilinguist
     json_response['translationText']
   end
 end
+
+
+class MathGenius < Multilinguist
+
+  def report_total(*nums)
+    puts "The total is #{nums.sum}"
+  end
+
+end
+
+
+
+class QuoteCollector < Multilinguist
+
+  def initialize
+    @favorite_quotes = []
+  end
+
+#READER
+  def favorite_quotes
+    @favorite_quotes
+  end
+
+#can add a new favorite quote into the favorite quotes array
+  def add_fav_quote(quote)
+    @favorite_quotes << quote
+  end
+
+end
+
+
+me = MathGenius.new
+puts me.report_total(2, 34, 5, 56, 67, 78, 2, 6, 7, 9, 2, 5, 3, 7)
+me.travel_to("Italy")
+puts me.report_total(2, 34, 5, 56, 67, 78, 2, 6, 7, 9, 2, 5, 3, 7)
+
+you = QuoteCollector.new
+puts you.favorite_quotes
+you.add_fav_quote("Hello World")
+puts you.favorite_quotes
+you.language_in("Italy")
+you.add_fav_quote("Hello World")
+puts you.favorite_quotes
