@@ -53,31 +53,6 @@ class Multilinguist
   end
 end
 
-
-class MathGenius < Multilinguist
-
-  def report_total(*nums)
-    puts "The total is #{nums.sum}"
-  end
-
-end
-
-
-
-class QuoteCollector < Multilinguist
-
-  def initialize
-    @favorite_quotes = []
-  end
-
-#READER
-  def favorite_quotes
-    @favorite_quotes
-  end
-
-#can add a new favorite quote into the favorite quotes array
-  def add_fav_quote(quote)
-    @favorite_quotes << quote
-  end
-
-end
+sarah = Multilinguist.new
+puts sarah.language_in('canada')
+puts sarah.language_in('iceland')
