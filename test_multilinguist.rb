@@ -13,12 +13,18 @@ class TestMultilinguist < MiniTest::Test
     outcome_one = sarah.language_in('japan')
     outcome_two = sarah.language_in('china')
     outcome_three = sarah.language_in('iceland')
-    outcome_four = sarah.language_in('korea')
+
     assert_equal(outcome_one, 'ja')
     assert_equal(outcome_two, 'zh')
     assert_equal(outcome_three, 'is')
-    assert_equal(outcome_four, 'ko')
-
   end
 
+  def test_language_not_in_countries
+    sarah = set_up
+    outcome_one = sarah.language_in('ireland')
+    outcome_two = sarah.language_in('ukraine')
+
+    refute_equal(outcome_one, 'ru')
+    refute_equal(outcome_two, 'ga')
+  end
 end
